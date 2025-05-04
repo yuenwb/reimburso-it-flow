@@ -3,6 +3,7 @@ import React, { createContext, useState, useContext, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 import { toast } from "sonner";
 
+// Make sure ReimbursementType is exported as a type
 export type ReimbursementType = "travel" | "meals" | "equipment" | "software" | "other";
 export type ReimbursementStatus = "pending" | "approved" | "rejected";
 
@@ -52,6 +53,9 @@ interface ReimbursementContextType {
   getRequestById: (id: string) => ReimbursementRequest | undefined;
   exportToCSV: () => void;
 }
+
+// Make sure to export the ReimbursementType values as a constant for use in Reports.tsx
+export const REIMBURSEMENT_TYPES: ReimbursementType[] = ["travel", "meals", "equipment", "software", "other"];
 
 // Generate a UUID
 const generateId = () => Math.random().toString(36).substring(2, 12);

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useReimbursement, ReimbursementType } from "@/contexts/ReimbursementContext";
+import { useReimbursement, REIMBURSEMENT_TYPES } from "@/contexts/ReimbursementContext";
 import { 
   Card,
   CardContent,
@@ -114,7 +114,7 @@ const Reports = () => {
   const approvalRate = totalRequests > 0 ? (approvedRequests / (approvedRequests + rejectedRequests)) * 100 : 0;
   
   // Prepare data for expense by type chart
-  const expensesByType = Object.values(ReimbursementType).map(type => {
+  const expensesByType = REIMBURSEMENT_TYPES.map(type => {
     const amount = filteredRequests
       .filter(req => req.type === type)
       .reduce((sum, req) => sum + req.amount, 0);
