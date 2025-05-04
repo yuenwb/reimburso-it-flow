@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for our reimbursement app
+				"status-pending": "#FFC107",
+				"status-approved": "#28A745",
+				"status-rejected": "#DC3545",
+				"it-blue": {
+					100: "#E3F2FD",
+					200: "#BBDEFB",
+					300: "#90CAF9",
+					400: "#64B5F6",
+					500: "#42A5F5",
+					600: "#2196F3",
+					700: "#1E88E5",
+					800: "#1976D2",
+					900: "#1565C0",
 				}
 			},
 			borderRadius: {
@@ -84,11 +100,16 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				fadeIn: {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fadeIn': 'fadeIn 0.5s ease-in-out',
 			}
 		}
 	},
